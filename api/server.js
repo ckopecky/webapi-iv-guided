@@ -2,7 +2,6 @@ const express = require('express');
 const helmet = require('helmet');
 
 const db = require('../data/db.js');
-
 const server = express();
 
 server.use(helmet());
@@ -10,7 +9,7 @@ server.use(express.json());
 
 server.get('/', async (req, res) => {
   try {
-    const shouts = await db('shouts');
+    const shouts = await db.get('shouts');
     res.status(200).json(shouts);
   } catch (error) {
     console.error('\nERROR', error);
