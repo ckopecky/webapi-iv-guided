@@ -24,7 +24,7 @@ server.post('/', async (req, res) => {
     console.log(req.body);
     const shouts = await db('shouts');
 
-    res.status(201).json(id);
+    res.status(201).json(shouts);
   } catch (error) {
     console.error('\nERROR', error);
     res.status(500).json({ error: 'Cannot add the shout' });
