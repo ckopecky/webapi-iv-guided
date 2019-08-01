@@ -9,7 +9,7 @@ server.use(express.json());
 
 server.get('/', async (req, res) => {
   try {
-    const shouts = await db.get('shouts');
+    const shouts = await db('shouts');
     res.status(200).json(shouts);
   } catch (error) {
     console.error('\nERROR', error);
